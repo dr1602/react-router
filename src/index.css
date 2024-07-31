@@ -1,0 +1,26 @@
+:root {
+  background: #808080;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.menu__Nav {
+  width: 100vw;
+}
+
+.menu__List {
+  display: flex;
+  width: 30vw;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.menu__List li {
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
