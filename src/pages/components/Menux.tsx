@@ -16,6 +16,14 @@ const Menu: React.FC = () => {
             text: 'Blog',
         },
         {
+            to: '/login',
+            text: 'Login',
+        },
+        {
+            to: '/logout',
+            text: 'Logout',
+        },
+        {
             to: '/profile',
             text: 'Profile',
         }
