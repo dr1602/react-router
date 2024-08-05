@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from './hooks/auth'
+import { Navigate } from 'react-router-dom';
 
 // React FC ayuda en typescript a definir un Function Component y permite pasar props prededifinas, en este caso no es necesario usar React.FC
 const LoginPage: React.FC = () => {
@@ -11,6 +12,10 @@ const LoginPage: React.FC = () => {
         e.preventDefault();
         // aqui auth? puede tener un valor o puede ser null y te permite renderizar el componente reciba o no informacion ya que es un comportamiento esperado por TS
         auth?.login({ username: userName })
+    }
+
+    if(auth?.user) {
+        return <Navigate to='/profile'/>
     }
 
     return(

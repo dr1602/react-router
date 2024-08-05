@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 // aqui se define que tipo de dato es children
 type AuthProviderProps = {
@@ -48,7 +48,18 @@ const useAuth = () => {
    return auth;
 }
 
+const ProtectedRoute = (props: any) => {
+    const auth = useAuth();
+
+    if (!auth?.user) {
+        return <Navigate to='/login'/>
+    }
+
+    return(props.children)
+}
+
 export {
     AuthProvider,
-    useAuth
+    useAuth,
+    ProtectedRoute
 }

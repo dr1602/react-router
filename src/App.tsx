@@ -6,7 +6,7 @@ import { ProfilePage } from './pages/ProfilePage'
 import { BlogPost } from './pages/components/BlogPost'
 import { LoginPage } from './pages/LoginPage'
 import { LogoutPage } from './pages/LogoutPage'
-import { AuthProvider } from './pages/hooks/auth'
+import { AuthProvider, ProtectedRoute } from './pages/hooks/auth'
 
 // recuerda que HashRouter es un provider como funciona con React Context
 
@@ -29,8 +29,8 @@ function App() {
             </Route>
 
             <Route path='/login' element={<LoginPage />} />
-            <Route path='/logout' element={<LogoutPage />} />
-            <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/logout' element={<ProtectedRoute><LogoutPage /></ProtectedRoute>} />
+            <Route path='/profile' element={<ProtectedRoute> <ProfilePage /> </ProtectedRoute>} />
             
             <Route path='*' element={<p> Not found </p>} />
           </Routes>
