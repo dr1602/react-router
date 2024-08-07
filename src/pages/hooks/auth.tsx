@@ -9,12 +9,28 @@ type AuthProviderProps = {
 // aqui se definen los tipos de datos que reciben las funciones y useState de Auth Provider
 type AuthContextType = {
     // el tipo de dato es un objeto con un tipo string o un valor nulo
-    user: {username: string} | null;
+    user: {username: string, specialUser: string | undefined, userTypeName: string | undefined } | null;
     // login recibe una funcion funcion con "credenciales" que son un objeto con un dato tipo string
     login: (credentials: { username: string }) =>  void;
     // logout recibe un valor del tipo funcion
     logout: () => void;
 }
+
+// esto de beria de ser trabajo del backend pero vamos a suponer que nos lo da el backend
+const specialUsers = [
+    {
+        userName: 'Irisval',
+        userType: 'admin'
+    },
+    {
+        userName: 'dr1602',
+        userType: 'admin'
+    },
+    {
+        userName: 'Arti',
+        userType: 'reviewer'
+    },
+]
 
 // aqui dice que createContext puede recibr los tupos definidos en AuthContextType o puede ser indefinido, y por default lo haces indefinido
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -22,10 +38,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // React FC ayuda en typescript a definir un Function Component y permite pasar props prededifinas, en este caso es necesario para definir a "children"
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const navigate = useNavigate();
-    const [ user, setUser ] = useState<{username: string} | null>(null);
+    const [ user, setUser ] = useState<{ username: string, specialUser: string | undefined, userTypeName: string | undefined } | null>(null);
 
     const login = (credentials: { username: string }) => {
-        setUser({ username: credentials.username })
+        const isSpecialUser = specialUsers.find( admin => admin.userName === credentials.username )
+
+        setUser({ username: credentials.username, specialUser: isSpecialUser?.userName, userTypeName: isSpecialUser?.userType })
         navigate('/profile');
     }
 

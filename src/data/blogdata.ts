@@ -12,7 +12,7 @@ blogdata.push(
         title: '¿Qué es React?',
         slug: 'que-es-react',
         content: 'React es una biblioteca de JavaScript para construir interfaces de usuario.',
-        author: 'Juan Pérez'
+        author: 'Irisval'
     },
     {
         title: 'Introducción a Vue.js',
@@ -24,13 +24,13 @@ blogdata.push(
         title: 'Conceptos Básicos de Angular',
         slug: 'conceptos-basicos-de-angular',
         content: 'Angular es una plataforma de desarrollo para construir aplicaciones web.',
-        author: 'Carlos Gómez'
+        author: 'RataxMaster'
     },
     {
         title: 'Comenzando con Node.js',
         slug: 'comenzando-con-nodejs',
         content: 'Node.js es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.',
-        author: 'Ana Rodríguez'
+        author: 'Ana'
     },
     {
         title: 'Express.js: Un Framework Minimalista para Node.js',
@@ -42,7 +42,7 @@ blogdata.push(
         title: 'Fundamentos de MongoDB',
         slug: 'fundamentos-de-mongodb',
         content: 'MongoDB es una base de datos NoSQL orientada a documentos.',
-        author: 'Laura Sánchez'
+        author: 'dr1602'
     },
     {
         title: 'GraphQL vs REST',
