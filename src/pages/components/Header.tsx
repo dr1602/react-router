@@ -1,9 +1,9 @@
 import React from 'react';
 // import { Link, NavLink } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
-import { useAuth } from './../hooks/auth'
+import { useAuth } from '../hooks/auth'
 
-const Menu: React.FC = () => {
+const Header: React.FC = () => {
 
     const auth:any = useAuth();
 
@@ -41,7 +41,7 @@ const Menu: React.FC = () => {
     return(
         <>
             <nav className='menu__Nav'>
-                <ul className='flex menu__List'>
+                <ul className='flex menu__List list-none'>
 
                     {routes.map((route, index) => {
 
@@ -49,15 +49,16 @@ const Menu: React.FC = () => {
                         if (route.private && !auth.user) return null;
 
                         return(
-                            <li key={index} >
-                                <NavLink
-                                    // className={({ isActive }) => ''}
-                                    style={({ isActive }) => ({ 
-                                        color: isActive ? 'blue' : 'purple'
-                                    })}
-                                    to={route.to}
-                                > {route.text} </NavLink>
-                            </li>
+                            <NavLink
+                                key={index}
+                                // className={({ isActive }) => ''}
+                                style={({ isActive }) => ({ 
+                                    color: isActive ? '#EE720F' : '#F5B441',
+                                    textShadow: isActive ? '2px 2px 6px #EE720F' : '2px 2px 6px #EE720F',
+                                })}
+                                className='menu__List--item'
+                                to={route.to}
+                            > {route.text} </NavLink>
                         )
                     })}
                 </ul>
@@ -66,4 +67,4 @@ const Menu: React.FC = () => {
     )
 }
 
-export { Menu }
+export { Header }

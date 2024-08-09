@@ -1,4 +1,4 @@
-import { Menu } from './pages/components/Menux'
+import { Header } from './pages/components/Header'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
 import { BlogPage } from './pages/BlogPage'
@@ -7,6 +7,7 @@ import { BlogPost } from './pages/components/BlogPost'
 import { LoginPage } from './pages/LoginPage'
 import { LogoutPage } from './pages/LogoutPage'
 import { AuthProvider, ProtectedRoute } from './pages/hooks/auth'
+import Stars from './pages/components/Stars'
 
 // recuerda que HashRouter es un provider como funciona con React Context
 
@@ -19,7 +20,9 @@ function App() {
       <HashRouter>
         {/* debe de aparecer en todas las paginas, muy recomendable que este dentro de hash router */}
         <AuthProvider>
-          <Menu />
+          <Header />
+
+          <Stars/>
 
           <Routes>
             <Route path='/' element={<HomePage />} />

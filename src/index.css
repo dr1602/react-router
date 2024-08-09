@@ -1,26 +1,139 @@
 :root {
-  background: #808080;
-  max-width: 100vw;
-  overflow-x: hidden;
+  /* background-image: linear-gradient(#141D25 45, #F5B441, #EE720F, #141D25); */
+background-image: linear-gradient(#141D25, #0e1d3e);
+height: 100vh;
+font-family: "Titillium Web", sans-serif;
 }
 
+body {
+background-size: 100vw 100vh;
+overflow-x: hidden;
+}
+
+.starContainer {
+z-index: -10;
+background-size: 100vw 100vh;
+}
+
+.star {
+position: relative;
+background: radial-gradient(#F5B441, #EE720F);
+}
+
+@for $i from 1 through 200 {
+.star:nth-of-type(#{$i}) {
+  top: random(101) - 1 + vh;
+  left: random(101) - 1 + vw;
+  width: random(2) + px;
+  height: random(2) + px;
+  opacity: random(50) / 100 + 0.5;
+}
+}
+
+.titillium-web-extralight {
+font-family: "Titillium Web", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+
+.titillium-web-light {
+font-family: "Titillium Web", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+.titillium-web-regular {
+font-family: "Titillium Web", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.titillium-web-semibold {
+font-family: "Titillium Web", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.titillium-web-bold {
+font-family: "Titillium Web", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.titillium-web-black {
+font-family: "Titillium Web", sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+
+.titillium-web-extralight-italic {
+font-family: "Titillium Web", sans-serif;
+font-weight: 200;
+font-style: italic;
+}
+
+.titillium-web-light-italic {
+font-family: "Titillium Web", sans-serif;
+font-weight: 300;
+font-style: italic;
+}
+
+.titillium-web-regular-italic {
+font-family: "Titillium Web", sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.titillium-web-semibold-italic {
+font-family: "Titillium Web", sans-serif;
+font-weight: 600;
+font-style: italic;
+}
+
+.titillium-web-bold-italic {
+font-family: "Titillium Web", sans-serif;
+font-weight: 700;
+font-style: italic;
+}
+
+
 .menu__Nav {
-  width: 100vw;
+width: 72vw;
+height: 6vh;
 }
 
 .menu__List {
-  display: flex;
-  width: 30vw;
-  justify-content: space-evenly;
-  list-style: none;
+display: flex;
+list-style-type: none;
+justify-content: space-between;
+font-size: 105%;
 }
 
-.menu__List li {
-  text-decoration: none;
+.menu__List a {
+text-decoration: none;
+
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: none;
+.menu__List--item {
+height: 4.5vh;
+}
+
+.menu__List--item:hover {
+transform: translateY(-1.2vh);
+transition: 300ms;
+}
+
+.HomeContainer {
+position: absolute;
+left: 3vw;
+bottom: 1.5vh;
+height: 90vh;
+width: 93vw;
+}
+
+.Home__header {
+font-size: 210%;
+color: #F5B441;
+text-decoration: underline;
+user-select: none;
 }

@@ -1,9 +1,11 @@
-import React from "react"
+import React from 'react'
 
 const HomePage: React.FC =() => {
     return(
         <>
-            <h1> HomePage </h1>
+            <section className='HomeContainer'>
+                <h1 className='Home__header'> Principio Tec </h1>
+            </section>
         </>
     )
 }
