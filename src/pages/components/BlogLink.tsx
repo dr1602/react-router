@@ -10,7 +10,7 @@ interface BlogLinkProps {
 const BlogLink: React.FC<BlogLinkProps> = ({ title, slug }) => {
     return(
         <>
-            <li>
+            <li className='BlogLink__container'>
                 <Link 
                     to={`/blog/${slug}`}
                 > 

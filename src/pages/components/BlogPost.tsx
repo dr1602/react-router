@@ -10,7 +10,7 @@ const BlogPost: React.FC =() => {
 
     const blogpost = blogdata.find( post => post.slug === slug );
 
-    const shouldDelete = auth?.user?.userTypeName !== 'reviewer' && auth?.user?.specialUser || blogpost?.author === auth?.user?.username ;
+    const shouldDelete = auth?.user?.userTypeName === 'admin' && auth?.user?.specialUser || blogpost?.author === auth?.user?.username ;
     const shouldEdit = blogpost?.author === auth?.user?.username || auth?.user?.userTypeName === 'reviewer';
 
     const returnBLog = () => {

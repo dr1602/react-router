@@ -27,15 +27,15 @@ const Header: React.FC = () => {
             privateOnly: true,
         },
         {
+            to: '/profile',
+            text: 'Profile',
+            private: true,
+        },
+        {
             to: '/logout',
             text: 'Logout',
             private: true,
         },
-        {
-            to: '/profile',
-            text: 'Profile',
-            private: true,
-        }
     )
 
     return(
@@ -53,8 +53,8 @@ const Header: React.FC = () => {
                                 key={index}
                                 // className={({ isActive }) => ''}
                                 style={({ isActive }) => ({ 
-                                    color: isActive ? '#EE720F' : '#F5B441',
-                                    textShadow: isActive ? '2px 2px 6px #EE720F' : '2px 2px 6px #EE720F',
+                                    color: isActive ? '#FFF' : '#F5B441',
+                                    textShadow: isActive ? '' : '2px 2px 6px #EE720F',
                                 })}
                                 className='menu__List--item'
                                 to={route.to}

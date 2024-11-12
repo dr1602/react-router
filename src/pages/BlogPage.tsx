@@ -6,19 +6,28 @@ import blogdata from './../data/blogdata'
 const BlogPage: React.FC =() => {
     return(
         <>
-            <h1> BlogPage </h1>
+            <section className='BlogPage__contianer'>
+                <h1 className='BlogPage__header'> BlogPage </h1>
 
-            <Outlet />
+                <div className='BlogPage__main'>
+                    <aside className='BlogPage__aside'>
+                    {
+                        blogdata.map((post, index) => (
+                            <BlogLink 
+                                key={index}
+                                title={post.title}
+                                slug={post.slug}
+                            />
+                        ))
+                    }
+                    </aside>
 
-            {
-                blogdata.map((post, index) => (
-                    <BlogLink 
-                        key={index}
-                        title={post.title}
-                        slug={post.slug}
-                    />
-                ))
-            }
+                    <article className='BlogPage__article'>
+                        <Outlet />
+                    </article>
+                </div>
+
+            </section>
         </>
     )
 }

@@ -20,18 +20,20 @@ const LoginPage: React.FC = () => {
 
     return(
         <>
-            <h1> LoginPage </h1>
+            <section className='LoginPage__container'>
+                <h1 className='LoginPage__header'> LoginPage </h1>
 
-            <form onSubmit={login}>
-                <label> Nombre/ Usuario </label>
-                <input 
-                    type='text'
-                    value={userName}
-                    onChange={ e => setUserName(e.target.value)}
-                />
+                <form onSubmit={login}>
+                    <label className='LoginPage__label'> Nombre/ Usuario </label>
+                    <input 
+                        type='text'
+                        value={userName}
+                        onChange={ e => setUserName(e.target.value)}
+                    />
 
-                <button type='submit'> Ir </button>
-            </form>
+                    <button type='submit'> Ir </button>
+                </form>
+            </section>
         </>
     )
 }

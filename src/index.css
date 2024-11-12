@@ -1,13 +1,16 @@
 :root {
   /* background-image: linear-gradient(#141D25 45, #F5B441, #EE720F, #141D25); */
-background-image: linear-gradient(#141D25, #0e1d3e);
-height: 100vh;
-font-family: "Titillium Web", sans-serif;
+  background-image: linear-gradient(#141D25, #0e1d3e);
+  height: 100vh;
+  width: 100vw;
+  font-family: "Titillium Web", sans-serif;
+  margin: 0 !important;
 }
 
 body {
-background-size: 100vw 100vh;
-overflow-x: hidden;
+  background-size: 100vw 100vh;
+  overflow-x: hidden;
+  margin: 0 !important;
 }
 
 .starContainer {
@@ -21,25 +24,25 @@ background: radial-gradient(#F5B441, #EE720F);
 }
 
 @for $i from 1 through 200 {
-.star:nth-of-type(#{$i}) {
-  top: random(101) - 1 + vh;
-  left: random(101) - 1 + vw;
-  width: random(2) + px;
-  height: random(2) + px;
-  opacity: random(50) / 100 + 0.5;
-}
+  .star:nth-of-type(#{$i}) {
+    top: random(101) - 1 + vh;
+    left: random(101) - 1 + vw;
+    width: random(2) + px;
+    height: random(2) + px;
+    opacity: random(50) / 100 + 0.5;
+  }
 }
 
 .titillium-web-extralight {
-font-family: "Titillium Web", sans-serif;
-font-weight: 200;
-font-style: normal;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 200;
+  font-style: normal;
 }
 
 .titillium-web-light {
-font-family: "Titillium Web", sans-serif;
-font-weight: 300;
-font-style: normal;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .titillium-web-regular {
@@ -79,61 +82,119 @@ font-style: italic;
 }
 
 .titillium-web-regular-italic {
-font-family: "Titillium Web", sans-serif;
-font-weight: 400;
-font-style: italic;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .titillium-web-semibold-italic {
-font-family: "Titillium Web", sans-serif;
-font-weight: 600;
-font-style: italic;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .titillium-web-bold-italic {
-font-family: "Titillium Web", sans-serif;
-font-weight: 700;
-font-style: italic;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 
 .menu__Nav {
-width: 72vw;
-height: 6vh;
+  background-color: purple;
+  width: screen;
+  height: 7vh;
+  display: grid;
+  justify-items: between;
+  align-content: center;
 }
 
 .menu__List {
-display: flex;
-list-style-type: none;
-justify-content: space-between;
-font-size: 105%;
+  width: 93vw;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  font-size: 105%;
 }
 
 .menu__List a {
-text-decoration: none;
+  text-decoration: none;
 
 }
 
 .menu__List--item {
-height: 4.5vh;
+  height: 4.5vh; 
 }
 
 .menu__List--item:hover {
-transform: translateY(-1.2vh);
-transition: 300ms;
+  transform: translateY(-0.9vh);
+  transition: 300ms;
 }
 
-.HomeContainer {
-position: absolute;
-left: 3vw;
-bottom: 1.5vh;
-height: 90vh;
-width: 93vw;
+.HomeContainer,
+.BlogPage__contianer,
+.LoginPage__container {
+  position: absolute;
+  left: 3vw;
+  bottom: 1.5vh;
+  height: 90vh;
+  width: 93vw;
 }
 
-.Home__header {
-font-size: 210%;
-color: #F5B441;
-text-decoration: underline;
-user-select: none;
+.Home__header,
+.BlogPage__header,
+.LoginPage__header {
+  font-size: 210%;
+  color: #F5B441 !important;
+  text-decoration: underline;
+  user-select: none;
+}
+
+.ProfilePage__header,
+.LoginPage__header,
+.LoginPage__label {
+  color: white;
+}
+
+.BlogLink__container {
+  list-style: white;
+  color: white;
+  list-style-position: outside;
+  height: 4.5vh;
+  
+}
+
+.BlogLink__container:hover {
+  transition: all 0.3s ease-out allow-discrete;
+  transform: translateY(-0.9vh);
+}
+
+a {
+  color: white;
+  cursor: pointer;
+}
+
+.BlogPage__aside {
+  /* background: #F5B441; */
+  position: relative;
+  left: 0;
+  width: 42vw;
+  height: 72vh;
+  padding: 0 1.5vw 0 1.5vw;
+}
+
+.BlogPage__article {
+  /* background: red; */
+  position: relative;
+  color: white;
+  right: 0;
+  width: 54vw;
+  height: 72vh;
+  transform: translate(-4.5vw, -4.5vh);
+  padding: 0 1.5vw 0 1.5vw;
+}
+
+.BlogPage__main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
